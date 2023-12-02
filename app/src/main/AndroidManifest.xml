@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.application">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <meta-data
+        android:name="com.google.mlkit.vision.DEPENDENCIES"
+        android:value="ocr" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature
+        android:name="android.hardware.camera2"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Application">
+        <activity
+            android:name=".Activity_send_video"
+            android:exported="false" />
+        <activity
+            android:name=".TranslateCall"
+            android:exported="false" />
+        <activity
+            android:name=".AddStoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_user_profile"
+            android:exported="false" />
+        <activity
+            android:name=".SendImage"
+            android:exported="false" />
+        <activity android:name=".Activity_profile" />
+        <activity
+            android:name=".camera"
+            android:exported="false" />
+        <activity
+            android:name=".ChatActivity"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activities.UsersActivity" />
+        <activity
+            android:name=".activities.OutgoingInvitationActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.IncomingInvitationActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".UserUpdate" />
+        <activity android:name=".activities.MainActivity" />
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+            android:value="ocr" />
+
+        <activity
+            android:name=".activities.login"
+            android:windowSoftInputMode="adjustResize" />
+        <activity android:name=".activities.SignUpActivity" />
+
+        <service
+            android:name=".firebase.MessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>
